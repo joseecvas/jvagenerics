@@ -1,4 +1,4 @@
-package Ejer5;
+package Ejer5_6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +31,30 @@ public abstract class ListaOrdenada<E extends Comparable<E>> implements Coleccio
         }
         lista.add(index, elemento);
     }
+    public int size() {
+        return lista.size ();
+    }
+    public E get(int index){
+        return lista.get ( index );
+    }
+    public boolean remove(E o){
+        boolean remove = false;
+        for(E e : lista){
+            if (e.equals ( o )){
+                lista.remove ( o );
+                remove = true;
+            }
+        }
+        return remove;
+    }
+    public int indexOf(E o){
+        return lista.indexOf ( o );
+    }
 
+    @Override
+    public String toString() {
+        return "ListaOrdenada{" +
+                "lista=" + lista +
+                '}';
+    }
 }

@@ -1,4 +1,4 @@
-package Ejer5;
+package Ejer5_6;
 
 public interface ColeccionSimpleGenerica<E> {
     public boolean estaVacia();
