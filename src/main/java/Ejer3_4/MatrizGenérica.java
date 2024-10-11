@@ -1,16 +1,16 @@
-package Ejer3;
-
-import java.util.Arrays;
+package Ejer3_4;
 
 public class MatrizGenérica<T> {
     private int filas;
     private int columnas;
     private T[][] matriz;
+
     public MatrizGenérica(int filas, int columnas) {
         this.filas = filas;
         this.columnas = columnas;
-        matriz = new T[2][4];
+        matriz = (T[][]) new Object[filas][columnas];
     }
+
     public void set(int fila, int columna, T elemento){
         matriz[fila][columna] = elemento;
     }
@@ -26,12 +26,21 @@ public class MatrizGenérica<T> {
         return filas;
     }
 
+    public String matrizToString(){
+        String matriztxt = "";
+        for(int i = 0;i<filas;i++){
+            for (int j = 0;j<columnas;j++){
+                matriztxt+=matriz[i][j]+",";
+            }
+        }
+        return matriztxt;
+    }
     @Override
     public String toString() {
         return "MatrizGenérica{" +
                 "filas=" + filas +
                 ", columnas=" + columnas +
-                ", matriz=" + Arrays.toString(matriz) +
+                ", matriz=" + matrizToString() +
                 '}';
     }
 }
